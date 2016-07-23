@@ -20,7 +20,7 @@ new (function() {
               url: 'http://pos.infoman.com.cn/posdev/getcachedata.php',
               dataType: 'json',
               success: function( cacheData ) {
-                  // Got the data - parse it and return the temperature
+				  console.log(cacheData);
                   amount = cacheData[site]['amount'];
                   callback(amount);
               }
@@ -28,6 +28,7 @@ new (function() {
     };
 
 	ext.getAmount = function(amount){
+		console.log(amount);
 		return amount;
 	}
     // Block and block menu descriptions
