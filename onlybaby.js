@@ -14,15 +14,15 @@ new (function() {
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.getBusiData = function(location, callback) {
+    ext.getBusiData = function(site, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://api.openweathermap.org/data/2.5/weather?q='+location+'&units=imperial',
+              url: 'http://pos.infoman.com.cn/posdev/getcachedata.php',
               dataType: 'json',
-              success: function( busi_data ) {
+              success: function( cacheData ) {
                   // Got the data - parse it and return the temperature
-                  temperature = busi_data['amount'];
-                  callback(temperature);
+                  amount = cacheData[site]['amount'];
+                  callback(amount);
               }
         });
     };
