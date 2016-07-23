@@ -27,10 +27,13 @@ new (function() {
         });
     };
 
+	ext.getAmount = function(amount){
+		return amount;
+	}
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Daily Sales of %s', 'getBusiData', '01'],
+            ['R', 'Daily Sales of %s', 'getBusiData', '01','getAmount'],
         ]
     };
 
