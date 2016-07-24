@@ -5,6 +5,7 @@
 new (function() {
     var ext = this;
 
+	var today = new Date().toISOString().replace(/([\/\-]+)|(T[0-9:\.]+Z)/g,'');
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -14,10 +15,10 @@ new (function() {
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.getBusiData = function(site, callback) {
+    ext.getBusiData = function(date,site, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: 'http://pos.infoman.com.cn/posdev/getcachedata.php',
+              url: `http://pos.infoman.com.cn/posdev/getcachedata.php?date=${date}`,
               dataType: 'json',
               success: function( cacheData ) {
 				  console.log(cacheData);
@@ -34,7 +35,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Daily Sales of %s', 'getBusiData', '01','getAmount'],
+            ['R', 'Daily Sales of %s', 'getBusiData',today, '01','getAmount'],
         ]
     };
 
