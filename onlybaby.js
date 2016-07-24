@@ -2,6 +2,7 @@
 /* Sayamindu Dasgupta <sayamindu@media.mit.edu>, May 2014 */
 
 
+var _debug = false;
 new (function() {
     var ext = this;
 
