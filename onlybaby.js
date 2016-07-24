@@ -23,7 +23,8 @@ new (function() {
               dataType: 'json',
               success: function( cacheData ) {
 		if(_debug) console.log(cacheData);
-                  amount = cacheData[site]['amount'];
+                  //amount = cacheData[site]['amount'];
+                  amount = Math.round(cacheData[site]['amount']*100)/100;
                   callback(amount);
               }
         });
@@ -36,7 +37,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01','getAmount'],
+            ['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01'],
         ]
     };
 
