@@ -38,7 +38,8 @@ new (function() {
 
     var descriptor = {
         blocks: [
-        	['r', 'today', 'today',today],
+        	['r', 'today',today],
+        	 ['r', 'date %s',today],
         	['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01']
         ]
     };
