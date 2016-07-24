@@ -30,9 +30,9 @@ new (function() {
         });
     };
 
-	ext.getAmount = function(amount){
-		if(_debug) console.log(amount);
-		return Math.round(amount*100)/100;
+	ext.num2fixLenStr = function(num,len){
+		var tmp = '0'.repeat(len) + num;
+		return tmp.substring(tmp.length,tmp.length - len);
 	}
 	
 	ext.today = function(){return today};
@@ -44,6 +44,7 @@ new (function() {
         blocks: [
         	['r', 'today','today'],
         	['r','date %s','date',today],
+			['r','fixLenStr num = %s len = %s ','num2fixLenStr',1,2],
         	['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01']
         ]
     };
