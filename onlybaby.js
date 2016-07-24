@@ -34,12 +34,15 @@ new (function() {
 		if(_debug) console.log(amount);
 		return Math.round(amount*100)/100;
 	}
+	
+	ext.today = today;
+	
     // Block and block menu descriptions
 
     var descriptor = {
         blocks: [
-        	['r', 'today',today],
-        	 ['r', 'date %s',today],
+        	['r', 'today','today],
+        	 ['r', 'date %s','today'],
         	['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01']
         ]
     };
