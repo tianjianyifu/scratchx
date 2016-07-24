@@ -19,7 +19,7 @@ new (function() {
     ext.getBusiData = function(site, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: `http:http://pos.infoman.com.cn/posdev/getrtsales.php?task=amount&site=${site}`,
+              url: `http://pos.infoman.com.cn/posdev/getrtsales.php?task=amount&site=${site}`,
               dataType: 'json',
               success: function( data ) {
 			if(_debug) console.log(data);
