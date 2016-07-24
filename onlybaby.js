@@ -35,14 +35,15 @@ new (function() {
 		return Math.round(amount*100)/100;
 	}
 	
-	ext.today = today;
+	ext.today = function(){return today};
+	ext.date = function(indate){return indate};
 	
     // Block and block menu descriptions
 
     var descriptor = {
         blocks: [
         	['r', 'today','today'],
-        	 ['r', 'date %s','today'],
+        	['r','date %s','date',today],
         	['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01']
         ]
     };
