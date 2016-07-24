@@ -35,13 +35,12 @@ new (function() {
 		return Math.round(amount*100)/100;
 	}
     // Block and block menu descriptions
-    var descriptor = {
+
     var descriptor = {
         blocks: [
         	['r', 'today', 'today',today],
         	['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01']
         ]
-    };
     };
 
     // Register the extension
