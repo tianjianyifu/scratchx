@@ -25,7 +25,7 @@ new (function() {
 		if(_debug) console.log(cacheData);
                   //amount = cacheData[site]['amount'];
                   amount = Math.round(cacheData[site]['amount']*100)/100;
-                  callback(amount);
+                  if(callback) callback(amount);
               }
         });
     };
@@ -36,9 +36,12 @@ new (function() {
 	}
     // Block and block menu descriptions
     var descriptor = {
+    var descriptor = {
         blocks: [
-            ['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01'],
+        	['r', 'today', 'today',today],
+        	['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01']
         ]
+    };
     };
 
     // Register the extension
