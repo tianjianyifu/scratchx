@@ -22,7 +22,7 @@ new (function() {
               url: `http://pos.infoman.com.cn/posdev/getcachedata.php?date=${date}`,
               dataType: 'json',
               success: function( cacheData ) {
-				  if(_debug) console.log(cacheData);
+		if(_debug) console.log(cacheData);
                   amount = cacheData[site]['amount'];
                   callback(amount);
               }
