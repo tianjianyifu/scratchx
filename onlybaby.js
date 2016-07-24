@@ -16,15 +16,18 @@ new (function() {
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.getBusiData = function(date,site, callback) {
+    ext.getBusiData = function(site, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
-              url: `http://pos.infoman.com.cn/posdev/getcachedata.php?date=${date}`,
+              url: `http:http://pos.infoman.com.cn/posdev/getrtsales.php?task=amount&site=${site}`,
               dataType: 'json',
-              success: function( cacheData ) {
-		if(_debug) console.log(cacheData);
+              success: function( data ) {
+			if(_debug) console.log(data);
                   //amount = cacheData[site]['amount'];
-                  amount = Math.round(cacheData[site]['amount']*100)/100;
+				  if(data['amount'])
+					amount = Math.round(data['amount']*100)/100;
+				  else
+					  amount = 0;
                   if(callback) callback(amount);
               }
         });
@@ -45,7 +48,7 @@ new (function() {
         	['r', 'today','today'],
         	['r','date %s','date',today],
 			['r','fixLenStr num = %s len = %s ','num2fixLenStr',1,2],
-        	['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01']
+        	['R', 'Daily Sales of shop=%s', 'getBusiData', '01']
         ]
     };
 
