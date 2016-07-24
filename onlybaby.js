@@ -21,7 +21,7 @@ new (function() {
               url: `http://pos.infoman.com.cn/posdev/getcachedata.php?date=${date}`,
               dataType: 'json',
               success: function( cacheData ) {
-				  console.log(cacheData);
+				  if(_debug) console.log(cacheData);
                   amount = cacheData[site]['amount'];
                   callback(amount);
               }
@@ -29,8 +29,8 @@ new (function() {
     };
 
 	ext.getAmount = function(amount){
-		console.log(amount);
-		return amount;
+		if(_debug) console.log(amount);
+		return Math.round(amount*100)/100;
 	}
     // Block and block menu descriptions
     var descriptor = {
