@@ -35,7 +35,7 @@ new (function() {
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', 'Daily Sales of date=%s and shop=%s', 'getBusiData',today, '01','getAmount'],
+            ['R', 'Daily Sales of %s', 'getBusiData',today, '01','getAmount'],
         ]
     };
 
