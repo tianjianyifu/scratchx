@@ -27,7 +27,7 @@ new (function() {
 						 if(amount)	amount = Math.round(amount*100)/100;
 						 // else
 						//	  amount = '';
-					    if(callback) callback(amount);
+					  //  if(callback) callback(amount);
               }
         });
     };
