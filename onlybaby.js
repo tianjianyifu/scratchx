@@ -49,7 +49,7 @@ new (function() {
         	['r', 'Today','today'],
         	['r','date:%s','date',today], 
 			['r','N2S N = %s L = %s ','num2fixLenStr',1,2],
-        	['R', 'RTMount site£º%s', 'getRTAmount', '01'],
+        	['R', 'RTMount site: %s', 'getRTAmount', '01'],
 			[' ', ' AllAmount Date: %s', 'getAllAmount', today]
 
         ]
