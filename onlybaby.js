@@ -44,7 +44,20 @@ new (function() {
 	
     // Block and block menu descriptions
 
-    var descriptor = {
+	    var descriptor = {
+        blocks: [
+        	['r', 'Today','today'],
+        	['r','date:%s','date',today], 
+			['r','N2S N = %s L = %s ','num2fixLenStr',1,2],
+        	['R', 'RTMount site：%s', 'getRTAmount', '01'],
+			[' ', ' AllAmount Date: %s', 'getAllAmount', today]
+
+        ]
+    };
+	
+
+
+ /*   var descriptor = {
         blocks: [
         	['r', '今天','today'],
         	['r','日期： %s','date',today],
@@ -54,6 +67,7 @@ new (function() {
 
         ]
     };
+	*/
 
     // Register the extension
     ScratchExtensions.register('Daily Sales', descriptor, ext);
