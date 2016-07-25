@@ -16,7 +16,7 @@ new (function() {
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.getBusiData = function(site, callback) {
+    ext.getRTAmount = function(site, callback) {
         // Make an AJAX call to the Open Weather Maps API
         $.ajax({
               url: `http://pos.infoman.com.cn/posdev/getrtsales.php?task=amount&site=${site}`,
@@ -32,6 +32,10 @@ new (function() {
         });
     };
 
+	ext.getAllAmounts = function(date) {
+			window.open(`http://pos.infoman.com.cn/posdev/forkcaller.php?amountdate=${date}`,_blank,'menu=no');
+    };
+
 	ext.num2fixLenStr = function(num,len){
 		var tmp = '0'.repeat(len) + num;
 		return tmp.substring(tmp.length,tmp.length - len);
@@ -44,10 +48,12 @@ new (function() {
 
     var descriptor = {
         blocks: [
-        	['r', 'today','today'],
-        	['r','date %s','date',today],
-			['r','fixLenStr num = %s len = %s ','num2fixLenStr',1,2],
-        	['R', 'Daily Sales of shop=%s', 'getBusiData', '01']
+        	['r', '今天','today']
+        	['r','日期： %s','date',today],
+			['r','数字转定长串 N = %s L = %s ','num2fixLenStr',1,2],实时
+        	['R', '实时营业额 店号：%s', 'getRTAmount', '01']
+			[' ', ' 全店营业额 日期：%s', 'getAllAmount', today]
+
         ]
     };
 
