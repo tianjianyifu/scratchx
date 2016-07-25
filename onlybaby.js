@@ -2,7 +2,7 @@
 /* Sayamindu Dasgupta <sayamindu@media.mit.edu>, May 2014 */
 
 
-var _debug = false;
+var _debug = true;
 new (function() {
     var ext = this;
 
@@ -24,7 +24,7 @@ new (function() {
               success: function( data ) {
 						if(_debug) console.log(data);
 						 amount = data['amount'];
-						 if(amount)	amount = Math.round(data['amount']*100)/100;
+						 if(amount)	amount = Math.round(amount*100)/100;
 						 // else
 						//	  amount = '';
 					    if(callback) callback(amount);
