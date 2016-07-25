@@ -23,15 +23,13 @@ new (function() {
               dataType: 'json',
               success: function( data ) {
 						if(_debug) console.log(data);
-						  //amount = cacheData[site]['amount'];
-						  if(data['amount'])
-							amount = Math.round(data['amount']*100)/100;
-						  return amount;
+						 amount = data['amount'];
+						 if(amount)	amount = Math.round(data['amount']*100)/100;
 						 // else
 						//	  amount = '';
 					   //   if(callback) callback(amount);
               },
-			fail:function(){return ''}
+			fail:function(){amount = ''}
         });
     };
 
