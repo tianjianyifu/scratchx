@@ -22,14 +22,16 @@ new (function() {
               url: `http://pos.infoman.com.cn/posdev/getrtsales.php?task=amount&site=${site}`,
               dataType: 'json',
               success: function( data ) {
-			if(_debug) console.log(data);
-                  //amount = cacheData[site]['amount'];
-				  if(data['amount'])
-					amount = Math.round(data['amount']*100)/100;
-				  else
-					  amount = '';
-                  if(callback) callback(amount);
-              }
+						if(_debug) console.log(data);
+						  //amount = cacheData[site]['amount'];
+						  if(data['amount'])
+							amount = Math.round(data['amount']*100)/100;
+						  return amount;
+						 // else
+						//	  amount = '';
+					   //   if(callback) callback(amount);
+              },
+			fail:function(){return ''}
         });
     };
 
