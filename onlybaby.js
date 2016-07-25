@@ -31,7 +31,7 @@ new (function() {
     };
 
 	ext.getAllAmounts = function(date) {
-			window.open(`http://pos.infoman.com.cn/posdev/forkcaller.php?amountdate=${date}`,_blank,'menu=no');
+			window.open(`http://pos.infoman.com.cn/posdev/forkcaller.php?amountdate=${date}`,'_blank','menu=no');
     };
 
 	ext.num2fixLenStr = function(num,len){
