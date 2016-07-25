@@ -27,7 +27,7 @@ new (function() {
 				  if(data['amount'])
 					amount = Math.round(data['amount']*100)/100;
 				  else
-					  amount = 0;
+					  amount = '';
                   if(callback) callback(amount);
               }
         });
