@@ -28,8 +28,7 @@ new (function() {
 						 // else
 						//	  amount = '';
 					    if(callback) callback(amount);
-              },
-			fail:function(){amount = ''}
+              }
         });
     };
 
