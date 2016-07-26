@@ -47,10 +47,10 @@ new (function() {
 	    var descriptor = {
         blocks: [
         	['r', '今天','today'],
-        	['r','date:%s','date',today], 
-			['r','N2S N = %s L = %s ','num2fixLenStr',1,2],
-        	['R', 'RTMount site: %s', 'getRTAmount', '01'],
-			[' ', ' AllAmount Date: %s', 'getAllAmounts', today]
+        	['r','日期: %s','date',today], 
+			['r','数字转定长串 N = %s L = %s ','num2fixLenStr',1,2],
+        	['R', '单店实时销售额 店号: %s', 'getRTAmount', '01'],
+			[' ', ' 全店销售额 日期: %s', 'getAllAmounts', today]
         ]
     };
 	
