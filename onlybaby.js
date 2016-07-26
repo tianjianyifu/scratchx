@@ -55,19 +55,6 @@ new (function() {
     };
 	
 
-
- /*   var descriptor = {
-        blocks: [
-        	['r', '今天','today'],
-        	['r','日期： %s','date',today],
-			['r','数字转定长串 N = %s L = %s ','num2fixLenStr',1,2],
-        	['R', '实时营业额 店号：%s', 'getRTAmount', '01'],
-			[' ', ' 全店营业额 日期：%s', 'getAllAmount', today]
-
-        ]
-    };
-	*/
-
     // Register the extension
     ScratchExtensions.register('Daily Sales', descriptor, ext);
 })();
