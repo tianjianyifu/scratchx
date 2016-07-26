@@ -46,7 +46,7 @@ new (function() {
 
 	    var descriptor = {
         blocks: [
-        	['r', '½ñÌì','today'],
+        	['r', 'ä»Šå¤©','today'],
         	['r','date:%s','date',today], 
 			['r','N2S N = %s L = %s ','num2fixLenStr',1,2],
         	['R', 'RTMount site: %s', 'getRTAmount', '01'],
@@ -58,11 +58,11 @@ new (function() {
 
  /*   var descriptor = {
         blocks: [
-        	['r', '½ñÌì','today'],
-        	['r','ÈÕÆÚ£º %s','date',today],
-			['r','Êı×Ö×ª¶¨³¤´® N = %s L = %s ','num2fixLenStr',1,2],
-        	['R', 'ÊµÊ±ÓªÒµ¶î µêºÅ£º%s', 'getRTAmount', '01'],
-			[' ', ' È«µêÓªÒµ¶î ÈÕÆÚ£º%s', 'getAllAmount', today]
+        	['r', 'ä»Šå¤©','today'],
+        	['r','æ—¥æœŸï¼š %s','date',today],
+			['r','æ•°å­—è½¬å®šé•¿ä¸² N = %s L = %s ','num2fixLenStr',1,2],
+        	['R', 'å®æ—¶è¥ä¸šé¢ åº—å·ï¼š%s', 'getRTAmount', '01'],
+			[' ', ' å…¨åº—è¥ä¸šé¢ æ—¥æœŸï¼š%s', 'getAllAmount', today]
 
         ]
     };
